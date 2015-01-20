@@ -1,0 +1,61 @@
+// ------------------------------------------------------------
+// Search bar
+// ------------------------------------------------------------
+
+.search-bar {
+	width: 100%;
+	padding: 0 0 11px;
+	position: fixed;
+	top: 0;
+	background-color: $text_color;
+	@include transition(opacity .3s ease);
+	@include transition-delay(.2s);
+	z-index: $z-search-bar;
+	&.visible {
+		.search-bar__field,
+		.btn-info {
+			opacity: 1;
+		}
+	}
+	@include respond-to(small-screens) {
+		padding-top: 7px;
+	}
+}
+
+.search-bar__field {
+	@extend %browser-ui-reset;
+	@extend %circular-book;
+	padding: 10px 0 0;
+	@extend %fs-huge;
+	color: $info_grey;
+	border-bottom: 2px solid $info_grey;
+	background-color: transparent;
+	width: 300px;
+	max-width: 60%;
+	opacity: 0;
+	@include respond-to(small-screens) {
+		@include fontsize(1.8, 2.8);
+	}
+}
+
+.search-trigger {
+	@extend %browser-ui-reset;
+	background-color: $brand_color_secondary;
+	color: $dark_grey;
+	position: absolute;
+	top: 0;
+	right: 0;
+	width: 50px;
+	height: 100%;
+	cursor: pointer;
+	@include fontsize(2.4);
+	@include transition(all .3s ease);
+	&:hover {
+		color: $text_color;
+	}
+}
+
+.search-bar .btn-info {
+	margin-left: 10px;
+	opacity: 0;
+}

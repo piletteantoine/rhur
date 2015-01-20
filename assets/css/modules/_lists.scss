@@ -1,0 +1,30 @@
+// ------------------------------------------------------------
+// Lists
+// ------------------------------------------------------------
+
+// Reset
+ul, ol {
+	list-style: none;
+	margin: 0;
+}
+
+// Floating list
+.floating-list {
+	overflow: hidden;
+	li {
+		float: left;
+	}
+}
+.heading-tiny + .floating-list {
+	margin-top: em-font(10px, 10px);
+}
+
+// Floating list items
+.by-2 li {
+	width: 45%;
+	clear: left;
+	&:nth-child(even) {
+		margin-left: 10%;
+		clear: none;
+	}
+}

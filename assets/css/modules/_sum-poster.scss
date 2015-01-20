@@ -1,0 +1,63 @@
+// ------------------------------------------------------------
+// Sum poster
+// ------------------------------------------------------------
+
+.sum-poster {
+	background-color: $brand_color_secondary;
+}
+
+.sum-poster img {
+	display: block;
+	max-width: 100%;
+	height: auto;
+	margin: 0 auto;
+}
+
+.sum-poster__term {
+	color: $brand_color_primary;
+	text-align: center;
+	@extend %newParis;
+	@extend %fs-sum-poster;
+	position: relative;
+	display: block;
+	width: 100%;
+	hyphens: none;
+	-webkit-backface-visibility: hidden;
+	backface-visibility: hidden;
+	&.image:not(:last-child) {
+		padding-bottom: 50px;
+		padding-bottom: 5rem;
+	}
+	&:not(:last-child) {
+		padding-bottom: 40px;
+		padding-bottom: 4rem;
+	}
+}
+
+/*
+ * Plus sign (+) */
+
+.sum-poster__term:not(:last-child):before,
+.sum-poster__term:not(:last-child):after {
+	position: absolute;
+	content: '';
+	background-color: $brand_color_primary;
+	left: 50%;
+	display: block;
+}
+
+// Vertical bar
+.sum-poster__term:not(:last-child):before {
+	bottom: 10px;
+	width: 2px;
+	height: 30px;
+	margin-left: -1px;
+}
+
+// Horizontal bar
+.sum-poster__term:not(:last-child):after {
+	bottom: 25px;
+	width: 30px;
+	height: 2px;
+	@include translateX(-50%);
+}

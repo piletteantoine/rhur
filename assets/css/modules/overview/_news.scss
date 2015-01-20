@@ -1,0 +1,118 @@
+// ------------------------------------------------------------
+// venues Article - News
+// ------------------------------------------------------------
+
+
+// The News
+.venues{
+	padding-top: $fs*5;
+	text-align: center;
+	background-color: #F6F6F6;
+	// background-color: $brand-color_tertiary;
+	padding-bottom: $fs*5;
+	overflow: hidden;
+
+}
+
+// Dispatch News on tree parts
+.venues-content{
+	
+	a{
+		color: $text-color;
+		text-decoration: none;
+	}
+	width: #{gs-width(t, 1, 2) + '%'};
+	background-color: white;
+	margin-right: #{gs-gutter(t, false, false) + '%'};
+	margin-bottom: #{gs-gutter(t, false, false) + '%'};
+	&:nth-of-type(3n + 0) {
+		margin-right: 0;
+	}
+	float: left;
+	@include respond-to(small-screens){
+	    width: 100%;
+	}
+	h4{
+		@include fontsize(2.4, 2.88);
+		padding: $fs*3 0 $fs*3 0;
+		@include respond-to(small-screens){
+			padding: 0 $fs*2 0 $fs*2;
+		}
+	}
+	.venues-news__text{
+		text-decoration: none;
+		background-color: white;
+		padding: 0 $fs*2 $fs*2 $fs*2;
+		@include respond-to(medium-screens){
+		    padding: $fs*4 $fs*1 $fs*3 $fs*1;
+		}
+	}
+}
+
+// Set image introduction on | 100% width |
+.venues-news__intro{
+	position: relative;
+	img{
+		width: 100%;
+		display: block;
+	}
+}
+
+// Set a font-sizing to credits 
+.venues-news__credit{
+	@include fontsize(1.8, 2.1);
+	margin-bottom: $fs*4;
+	padding: 0 3rem;
+	@include respond-to(small-screens){
+		padding: 0 $fs*2 0 $fs*2;
+	}
+}
+
+
+// ------------------------------------------------------------
+// Venues (page)
+// ------------------------------------------------------------
+
+
+.venues-page{
+	margin-top: $fs*12;
+}
+
+.venues-page .venues-content{
+	a{
+		color: $text-color;
+		text-decoration: underline;
+	}
+	min-height: 400px;
+	@include respond-to(medium-screens){
+		width: #{gs-width(t, 1, 3) + '%'};
+		margin-right: #{gs-gutter(t, false, false) + '%'};
+		margin-bottom: #{gs-gutter(t, false, false) + '%'};
+		&:nth-of-type(2n + 0) {
+			margin-right: 0;
+		}
+	}
+	@include respond-to(small-screens){
+		@include gs-span(m, all);
+		h4{
+			padding: $fs*3 0 $fs*3 0;
+		}
+		.venues-news__text{
+			padding: 0 $fs*2 $fs*2 $fs*2;
+		}
+	}
+	
+}
+
+.venues-page footer p{
+	text-align: center;
+	margin: 0 0 $fs*1 0;
+	&:after{
+		margin: 0 auto;
+	}
+}
+
+.venues-page footer a{
+	color: $text-color;
+	margin-top: 1rem;
+}

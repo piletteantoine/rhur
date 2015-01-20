@@ -1,0 +1,163 @@
+// ------------------------------------------------------------
+// Overview Article - Part 6
+// ------------------------------------------------------------
+// > Article Addon 
+// ------------------------------------------------------------
+
+// Styling
+
+.article-interview-picture-left{
+	p{
+		@include gs-span(d, 4,6);
+	}
+	img{
+		@include gs-span(d, 2,3);
+	}
+	// Media Queries 
+	@include respond-to(medium-screens){
+		p{
+			@include gs-span(t, 3,5);
+		}
+		img{
+			@include gs-span(t, 1,2);
+		}
+	}
+	@include respond-to(small-screens){
+		p{
+			@include gs-span(t, all);
+		}
+		img{
+			@include gs-span(m, 2,3);
+			margin-bottom: $fs*3;
+		}
+	}
+}
+
+.article-interview-picture-right{
+	img{
+		@include gs-span(d, 5,6);
+	}
+	p{
+		@include gs-span(d, 2,4);
+	}
+	@include respond-to(medium-screens){
+		p{
+			@include gs-span(t, 2,4);
+		}
+		img{
+			@include gs-span(t, 5,6);
+		}
+	}
+	@include respond-to(small-screens){
+		p{
+			@include gs-span(t, all);
+		}
+		img{
+			@include gs-span(m, 2,3);
+			margin-bottom: $fs*3;
+		}
+	}
+}
+
+.article-interview-picture-absolute_left{
+	img{
+		@include gs-span(d, 1,3);
+	}
+	p{
+		@include gs-span(d, 4,6);
+	}
+	@include respond-to(medium-screens){
+		p{
+			@include gs-span(t, 4,6);
+		}
+		img{
+			@include gs-span(t, 1,3);
+		}
+	}
+	@include respond-to(small-screens){
+		p{
+			@include gs-span(t, all);
+		}
+		img{
+			@include gs-span(m, 1,4);
+			margin-bottom: $fs*3;
+		}
+	}
+}
+
+.article-interview-text-absolute_left{
+	img{
+		@include gs-span(d, 4,6);
+	}
+	p{
+		@include gs-span(d, 1,3);
+	}
+	@include respond-to(medium-screens){
+		p{
+			@include gs-span(t, 1,3);
+		}
+		img{
+			@include gs-span(t, 4,6);
+		}
+	}
+	@include respond-to(small-screens){
+		p{
+			@include gs-span(t, all);
+		}
+		img{
+			@include gs-span(m, 1,4);
+			margin-bottom: $fs*3;
+		}
+	}
+}
+
+.article-interview-picture-centred{
+	@include gs-span(d, 2,5);
+	clear:left;
+	float: none;
+	img{
+		width: 100%;
+	}
+	@include respond-to(medium-screens){
+
+		@include gs-span(t, 2,5);
+	}
+
+	@include respond-to(small-screens){
+		@include gs-span(m, all);
+		margin-bottom: $fs*3;
+	}
+}
+
+.article-interview-large-picture-centred{
+	@include gs-span(d, 1,6);
+	clear:left;
+	// float: none;
+	img{
+		width: 100%;
+	}
+	@include respond-to(medium-screens){
+
+		@include gs-span(t, 1,6);
+	}
+	@include respond-to(small-screens){
+		@include gs-span(m, all);
+		margin-bottom: $fs*3;
+	}
+}
+
+
+// Defauts settings
+
+.article-common{
+	@extend %fs-extra-medium;
+	clear: left;
+	overflow: hidden;
+	margin-top: $fs*6.6;
+	@include respond-to(medium-screens){
+		 margin-bottom: $fs*8.8;
+	}
+	@include respond-to(small-screens){
+		 margin-bottom: $fs*6;
+	}
+}

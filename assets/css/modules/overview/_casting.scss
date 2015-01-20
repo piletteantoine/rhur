@@ -1,0 +1,27 @@
+// ------------------------------------------------------------
+// Overview Article - Part 7
+// ------------------------------------------------------------
+// > Casting
+// ------------------------------------------------------------
+// Summary
+// ------------------------------------------------------------
+//
+// 1. Casting article			.article-casting
+// ------------------------------------------------------------
+
+.overview-article .article-casting{
+	margin-top: $fs*6.6;
+	@include gs-span(d, 2,5);
+	@include fontsize(1.8, 2.8);
+	clear: left;
+	@include respond-to(medium-screens){
+    	@include gs-span(t, 1,6);
+    	@include fontsize(1.6, 2.5);
+	}
+	@include respond-to(small-screens){
+		width: 100%;
+		margin: 0; 
+		float: none;
+		// padding: $fs*2;
+	}
+}

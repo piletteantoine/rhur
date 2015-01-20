@@ -1,0 +1,120 @@
+// ------------------------------------------------------------
+// Overview Article - Part 1
+// ------------------------------------------------------------
+// > Introduction
+// ------------------------------------------------------------
+// Summary
+// ------------------------------------------------------------
+//
+// 1.Title positionning and sizing			.overview-introduction__title
+// 2.Block Text (Under Cover image)			.overview-introduction__cover
+// ------------------------------------------------------------
+
+// The overview-introduction 
+.overview-introduction{
+	background-color: $light_grey;
+	margin-top: $fs*12;
+
+	.overview-introduction__container{
+		position: relative;
+	}
+	.overview-introduction__cover{
+		max-height: 1000px;
+		overflow: hidden;
+		img{
+			width: 100%;
+			display: block;
+		}
+	}
+
+
+
+	.overview-introduction__title{
+
+		text-align: center;
+		position: absolute;
+		bottom: 20%;
+		left: 50%;
+		width: $fs*90;
+		text-align: center;
+		position: absolute;
+		-webkit-transform:  translate(-50%, 0%);
+		-moz-transform: 	translate(-50%, 0%);
+		-ms-transform: 		translate(-50%, 0%);
+		transform: 			translate(-50%, 0%);
+		background-color: white;
+		padding: $fs*5;
+
+		@include respond-to(medium-screens){
+			bottom: 15%;
+			width: 100%;
+			position: relative;
+		}
+		h2,
+		h3{
+			@extend %newParis;
+			color: $black;
+		}
+		h2{
+			@include fontsize(8.7);
+			@include respond-to(large-screens){
+				@include fontsize(7.3);
+			}
+			@include respond-to(medium-screens){
+				@include fontsize(6);
+			}
+			@include respond-to(x-small-screens){
+				@include fontsize(3);
+			}
+		}
+		h3{
+			@include fontsize(3);
+			text-transform: uppercase;
+			letter-spacing: 3px;
+			@include respond-to(large-screens){
+				@include fontsize(2.5);
+			}
+			@include respond-to(medium-screens){
+				@include fontsize(1.8);
+				letter-spacing: 2px;
+			}
+			@include respond-to(x-small-screens){
+				@include fontsize(1.2);
+				letter-spacing: 1px;
+			}
+		}
+	}
+	
+	.overview-introduction__cover-block{
+		width: 100%;
+		height: $fs*26;
+		display: table;
+		text-align: center;
+		@include respond-to(medium-screens){
+			height: auto;
+			padding: $fs*5;
+		}
+		p{
+			display: table-cell;
+			text-align: center;
+			vertical-align: middle;
+			margin: 0 auto;
+			@include fontsize(2.6);
+			width: 40%;
+			@include respond-to(medium-screens){
+				@include fontsize(2.2);
+				padding-left: $fs*18;
+				padding-right: $fs*18;
+			}
+			@include respond-to(small-screens){
+				@include fontsize(1.8);
+				padding-left: $fs*7;
+				padding-right: $fs*7;
+			}
+			@include respond-to(x-small-screens){
+				padding: 0;
+			}
+		}
+
+	}
+}

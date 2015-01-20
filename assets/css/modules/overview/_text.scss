@@ -1,0 +1,21 @@
+// ------------------------------------------------------------
+// Overview > Text (After video)
+// ------------------------------------------------------------
+
+
+.overview-article .text{
+	margin-top: $fs*10;
+	@include gs-span(d, 2,6);
+	@include fontsize(1.8, 2.8);
+	clear: left;
+	@include respond-to(medium-screens){
+    	@include gs-span(t, 2,5);
+    	@include fontsize(1.5, 2.4);
+    	margin-top: $fs*7.5;
+	}
+	@include respond-to(small-screens){
+		width: 100%;
+		margin: 0; 
+		margin-top: $fs*6;
+	}
+}

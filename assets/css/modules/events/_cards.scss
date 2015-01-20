@@ -1,0 +1,19 @@
+// ------------------------------------------------------------
+// Event cards
+// ------------------------------------------------------------
+
+.event-small-card {
+	img {
+		display: block;
+	}
+	p {
+		@extend %fs-small;
+		@extend .heading-small;
+		text-align: center;
+		margin: em-font(12px, 14px) 0 em-font(24px, 14px);
+	}
+	&:hover p {
+		@include transition(color .2s ease);
+		color: lighten($text_color, 20%)
+	}
+}

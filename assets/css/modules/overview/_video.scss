@@ -1,0 +1,28 @@
+// ------------------------------------------------------------
+// Overview Article - Part 3
+// ------------------------------------------------------------
+// > Embed Video 
+// ------------------------------------------------------------
+// Summary
+// ------------------------------------------------------------
+//
+// 1. Video box				.overview-article__video
+// ------------------------------------------------------------
+
+
+.overview-article__video{
+	margin-top: $fs*11.5;
+	@include gs-span(d, 1,6);
+	clear: left;
+	@include respond-to(medium-screens){
+    	@include gs-span(t, 1,6);
+    	margin-top: $fs*7.5;
+	}
+	@include respond-to(small-screens){
+    	width: 100%;
+    	margin-top: $fs*6;
+	}
+	video{
+		width: 100%;
+	}
+}

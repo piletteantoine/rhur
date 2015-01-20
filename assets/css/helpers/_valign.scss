@@ -1,0 +1,5 @@
+.valign-helper {
+	position: absolute;
+	top: 50%;
+	@include translateY(-50%);
+}

@@ -1,0 +1,108 @@
+// SVG Arrow (Animation)
+
+
+.arrow-container {
+	@include gs-span(d, 7, 9);
+	padding: 85px 0 65px;
+	padding: $fs*8.5 0 $fs*6.5;
+	@include respond-to(small-screens) {
+		float: none;
+		clear: both;
+		width: 100%;
+		margin: 0;
+		padding: 0 0 7rem;
+		text-align: left;
+	}
+}
+
+.arrow-content{
+	width: $fs*18;
+	max-height: $fs*11;
+	margin: 0 auto;
+	position: relative;
+	@include respond-to(small-screens){
+		margin: 0;
+	}
+}
+
+.arrow{
+	z-index: $z-body-overlay;
+	// position: absolute;
+	position: relative;
+	right: -20px;
+	right: $fs*-2;
+	text-align: center;
+	color: $brand_color_primary;
+	@include transition(all .2s ease);
+	&:hover{
+		svg,
+		p{
+			opacity: 1;
+		}
+	}
+	@include respond-to(medium-screens) {
+		right: 0;
+	}
+	@include respond-to(small-screens) {
+		display: inline-block;
+
+		// Browser UI reset
+		-webkit-appearance: none;
+		border-radius: 0;
+		border: none;
+		outline: none;
+
+		// Btn simple
+		background-color: transparent;
+		border: 2px solid $text_color;
+		color: $text_color;
+		text-decoration: none;
+		@include fontsize(1.6);
+		padding: 5px 13px 6px;
+		padding: 0.5rem 1.3rem 0.6rem;
+		@include transition(all .3s ease);
+		&:hover {
+			background-color: $text_color;
+			color: $white;
+		}
+	}
+}
+
+.arrow p {
+	text-align: center;
+	opacity: 0.8;
+	@include respond-to(small-screens) {
+		display: inline;
+		opacity: 1;
+	}
+}
+
+.arrow p:before{
+	content:'';
+	position: absolute;
+	top: 0;
+	right: 0;
+	height: $fs*14;
+	width: $fs*18;
+	z-index: $z-overlay-before;
+}
+
+.arrow svg {
+	max-width: $fs*15;
+	max-height: $fs*11;
+	opacity: 0.8;
+	margin: 0 0 0 $fs*3;
+	@include respond-to(small-screens) {
+		display: none;
+	}
+}
+
+.base{
+	position: absolute;
+}
+
+.arrow div {
+	@include respond-to(small-screens) {
+		display: inline;
+	}
+}

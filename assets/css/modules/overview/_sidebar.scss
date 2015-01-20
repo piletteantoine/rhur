@@ -1,0 +1,312 @@
+// ------------------------------------------------------------
+// Overview Article - Aside Content
+// ------------------------------------------------------------
+// > Tickets Buying 
+// ------------------------------------------------------------
+
+.tickets{
+	@include gs-span(d, 7,9);
+	margin-right: 0;
+	z-index: 1;
+	background-color: $white;
+	margin-top: -43px;
+	-webkit-box-shadow: 0px 0px 5px 2px rgba(0, 0, 0, 0.1);
+	-moz-box-shadow: 0px 0px 5px 2px rgba(0, 0, 0, 0.1);
+	box-shadow: 0px 0px 5px 2px rgba(0, 0, 0, 0.1);
+	float: none;
+	position: absolute;
+
+	img {
+		display: block;
+		width: 100%;
+		height: auto;
+	}
+	.tickets__body {
+		@include respond-to(short-screen-height) {
+			height: 50vh;
+			overflow-y: scroll;
+		}
+	}
+	.tickets__container{
+		padding: 0 24px 24px 24px;
+		position: relative;
+		@include respond-to(small-screens){
+			padding: $fs*3;
+		}
+	}
+
+}
+
+.target__block{
+	background-color: $light-grey;
+	height: 70px;
+}
+
+.visible-as-modal {
+	display: block;
+	position: fixed;
+	height: 80%;
+	top: 10%;
+	box-shadow: 0 0 10px 0 rgba(0, 0, 0, .3);
+	z-index: $z-modal;
+	left: 5%;
+	width: 90%;
+	margin: 0;
+	overflow-y: scroll;
+	.tickets__body {
+		@include respond-to(short-screen-height) {
+			height: auto;
+		}
+	}
+}
+
+.tickets__container p{
+	max-width: 75%;
+	line-height: $fs*2.1;
+	@include respond-to(medium-screens){
+		max-width: 100%;
+	}
+}
+
+.tickets__container .heading-tiny{
+	margin-top: $fs*.7;
+}
+
+.tickets__container .heading-tiny:first-of-type{
+	margin: $fs*1.6 $fs*1 0 0;
+}
+
+.tickets__container .btn-action-black{
+	margin: $fs*4 0 $fs*4 0;
+
+}
+
+// ------------------------------------------------------------
+// JavaScript applied/removed classes
+// ------------------------------------------------------------
+
+.js--scrolled-past-content {
+	position: absolute;
+	margin-left: 69.3333333%;
+	margin-top: 0;
+	right: 0;
+	top: auto;
+	bottom: 0;
+	width: 30.6667%;
+	@include respond-to(medium-screens) { // < 1024
+		width: 30%;
+	}
+	@include respond-to(small-screens) { // < 780
+		width: 90%;
+	}
+}
+
+.js--viewing-content {
+	position: fixed;
+	top: 165px; // 100 if no sub nav — 165 if with sub nav
+	right: 5%; // Overridden by JavaScript for > 1333
+	left: auto;
+	margin: 0;
+	width: 27.6%; // Overridden by JavaScript for > 1333
+	@include respond-to(medium-screens) { // < 1024
+		width: 27%;
+	}
+	@include respond-to(small-screens) { // < 780
+		width: 90%;
+	}
+}
+
+.js--stick-at-the-end {
+	position: absolute;
+	margin-left: 69.3333333%;
+	margin-top: 0;
+	right: 0;
+	top: auto;
+	bottom: 71px;
+	width: 30.6667%;
+	@include respond-to(medium-screens) { // < 1024
+		width: 30%;
+	}
+	@include respond-to(small-screens) { // < 780
+		width: 90%;
+	}
+}
+
+.js--original-state {
+	position: absolute;
+	margin-left: 69.3333333%;
+	margin-top: -43px;
+	right: 0;
+	top: 0;
+	width: 30.6667%;
+	@include respond-to(medium-screens) { // < 1024
+		width: 30%;
+	}
+	@include respond-to(small-screens) { // < 780
+		width: 90%;
+	}
+}
+
+
+.tickets__container{
+	padding: 0 24px 24px 24px;
+	position: relative;
+	@include respond-to(small-screens){
+		padding: $fs*3;
+	}
+}
+
+
+
+// ------------------------------------------------------------
+// > Responsive View
+// ------------------------------------------------------------
+
+.sidebar-reveal {
+	display: none;
+}
+
+@include respond-to(medium-screens){
+	
+	.hidden{
+		overflow: hidden;
+	}
+
+	.sidebar-reveal.on{
+		background-color: $brand_color_primary;
+	}
+
+	.sidebar-reveal{
+		outline: 0;
+		position: fixed;
+		z-index: $z-modal;
+		left: 0;
+		bottom: 0;
+		width: 100%;
+		border: none;
+		height: $fs*5;
+		letter-spacing: 1px;
+		text-transform: uppercase;
+		background-color: $black;
+		color: $white;
+		@include fontsize(1.4);
+	}
+
+	.st-content{
+		position: relative;
+		background-color: white;
+	}
+
+	.st-pusher {
+		position: relative;
+		background-color: $white;
+		left: 0;
+		z-index: 99;
+		height: 100%;
+		-webkit-transition: -webkit-transform 0.5s;
+		transition: transform 0.5s;
+	}
+
+	.st-content::after {
+		position: absolute;
+		top: 0;
+		right: -6%;
+		width: 0;
+		background: rgba(246,246,246,1);
+		content: '';
+		opacity: 0;
+		-webkit-transition: opacity 0.5s, width 0.1s 0.5s, height 0.1s 0.5s;
+		transition: opacity 0.5s, width 0.1s 0.5s, height 0.1s 0.5s;
+	}
+
+	.st-tickets-open .st-content::after {
+		width: 110%;
+		height: 100%;
+		opacity: .9;
+		-webkit-transition: opacity 0.5s;
+		transition: opacity 0.5s;
+	}
+
+	.st-tickets {
+		position: fixed;
+		top: $fs*12;
+		right: 0;
+		z-index: $z-body-overlay;
+		overflow-y: scroll;
+		visibility: hidden;
+		width: 42%;
+		height: 100%;
+		-webkit-transition: all 0.5s;
+		transition: all 0.5s;
+		-webkit-transform: translate3d(100%, 0, 0);
+		transform: translate3d(100%, 0, 0);
+	}
+
+	.st-tickets::after {
+		position: absolute;
+		top: 0;
+		right: -2px;
+		width: 100%;
+		height: 100%;
+		background: rgba(0,0,0,0.2);
+		content: '';
+		opacity: 1;
+		-webkit-transition: opacity 0.5s;
+		transition: opacity 0.5s;
+	}
+
+	.st-tickets-open .st-tickets::after {
+		width: 0;
+		height: 0;
+		opacity: 0;
+		-webkit-transition: opacity 0.5s, width 0.1s 0.5s, height 0.1s 0.5s;
+		transition: opacity 0.5s, width 0.1s 0.5s, height 0.1s 0.5s;
+	}
+
+	/* The Effect */
+
+	.st-effect.st-tickets-open .st-pusher {
+		-webkit-transform: translate3d(-47.5%, 0, 0);
+		transform: translate3d(-47.5%, 0, 0);
+		@include transition(all .7s ease-in-out);
+	}
+
+	.st-effect.st-tickets-open .st-tickets{
+		-webkit-transform: translate3d(0%, 0, 0);
+		transform: translate3d(0%, 0, 0);
+		@include transition(all .5s ease-in-out);
+	}
+
+	.st-effect.st-tickets-open .st-effect.st-tickets {
+		visibility: visible;
+		-webkit-transition: -webkit-transform 0.5s;
+		transition: transform 0.5s;
+	}
+
+	.st-effect.st-tickets::after {
+		display: none;
+	}
+
+}
+
+
+@include respond-to(small-screens){
+	.st-tickets{
+		width: 100%;
+		top: $fs*14;
+	}
+	.st-effect.st-tickets-open .st-pusher {
+		-webkit-transform: translate3d(-110%, 0, 0);
+		transform: translate3d(-110%, 0, 0);
+	}
+}
+@include respond-to(phone-screen-height){
+	.st-tickets{
+		width: 100%;
+		top: $fs*18;
+	}
+
+}
+
+
+

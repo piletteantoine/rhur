@@ -1,0 +1,26 @@
+.home-search__container{
+	@include gs-span(d, 3,7);
+	@include fontsize(2,2.8);
+	clear: left;
+	margin-top: $fs*18.7;
+	margin-bottom: $fs*2.4;
+	text-align: center;
+}
+
+.search{
+	padding: $fs*2 $fs*3.6 $fs*2 $fs*3.6;
+	background-color: $dark_black;
+	color: $white;
+}
+
+// Media Queries 
+
+.home-search__container{
+	@include respond-to(medium-screens){
+		@include gs-span(t, 2,5);
+	}
+	@include respond-to(small-screens){
+		@include gs-span(m, all);
+	}
+}
+

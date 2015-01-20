@@ -1,0 +1,37 @@
+// ------------------------------------------------------------
+// Overview base settings
+// ------------------------------------------------------------
+
+.bold-subtitle{
+	margin: 0 0 30px 30px;
+	@include fontsize(1.4);
+	text-transform: uppercase;
+	@extend %circular-bold;
+	@include respond-to(medium-screens){
+		margin: 0 0 20px 20px;
+		@include fontsize(1.2);
+	}
+}
+
+.overview-article{
+	float: left;
+	margin-bottom: 85px;
+
+	.overview-article__about,
+	.tickets,
+	// blockquote,
+	.text,
+	.article-addon,
+	.article-casting,
+	footer{
+		// margin-top: 90px;
+		@include respond-to(medium-screens){
+    		margin-top: $fs*7.5;
+		}
+	}
+	.text,
+	.article-addon,
+	.article-casting{
+		@include fontsize(1.8, 2.8);
+	}
+}

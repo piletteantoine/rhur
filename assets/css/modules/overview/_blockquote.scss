@@ -1,0 +1,44 @@
+// ------------------------------------------------------------
+// Overview Article - Part 5
+// ------------------------------------------------------------
+// > Blockquote - Citation
+// ------------------------------------------------------------
+// Summary
+// ------------------------------------------------------------
+//
+// 1. Blockquote			blockquote
+// ------------------------------------------------------------
+
+.overview-article__citation{
+	margin: $fs*12 0 $fs*12 0;
+
+	text-align: center;
+	@include gs-span(d, 1,6);
+	clear: left;
+	@include respond-to(medium-screens){
+    	@include gs-span(t, 1,6);
+    	margin: $fs*7 0 $fs*7 0;
+	}
+	@include respond-to(small-screens){
+		width: 100%;
+		margin: 0; 
+		margin: $fs*6 0 $fs*6 0;
+		// padding: $fs*2;
+	}
+
+	p{
+		@include fontsize(3.2, 4);
+		@include respond-to(medium-screens){
+    		@include fontsize(2.8, 3.5);
+		}
+		@include respond-to(small-screens){
+			@include fontsize(2.5, 3);
+		}
+	}
+	cite{
+		display: block;
+		padding-top: 1em;
+		@include fontsize(1.6);
+	}
+
+}

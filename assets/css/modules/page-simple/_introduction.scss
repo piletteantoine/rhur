@@ -1,0 +1,20 @@
+.page-simple  .page-simple__introduction,
+.page-simple__no-sidebar  .page-simple__introduction{
+	margin: $fs*(6.4 + 5) 0 0;
+	text-align: center;
+	// @include gs-span(t, 2,5);
+	@include gs-span(d, 3,7);
+	clear: left;
+}
+
+.page-simple .page-simple__introduction img,
+.page-simple__no .page-simple__introduction img{
+	max-width: 100%;
+}
+
+//Media Queries 
+.page-simple  .page-simple__introduction{
+	@include respond-to(medium-screens){
+		@include gs-span(t, 1,6);	
+	}
+}

@@ -1,0 +1,33 @@
+.page-simple__footer {
+	margin-top: $fs*8;
+	width: 100%;
+	clear: both;
+	ul{
+		clear: both;
+		li{
+			list-style:  none;
+			@include fontsize(2, 3.2);
+			@include respond-to(medium-screens){
+		    	@include fontsize(1.7, 2.8);
+			}
+		}	
+	}
+}
+
+.page-simple__footer li{
+	color: $brand_color_tertiary;
+	line-height: 1.5;
+	margin-bottom: 5px;
+	span:first-of-type{
+		padding-bottom: .1rem;
+		border-bottom: 2px solid lighten($brand_color_tertiary, 15%);
+	}
+}
+
+.page-simple__footer .page-simple__date{
+	color: $brand_color_primary;
+	margin-left: .4rem;
+	@include respond-to(small-screens) {
+		display: block;
+	}
+}

@@ -1,0 +1,199 @@
+// ------------------------------------------------------------
+// Map sidebar
+// ------------------------------------------------------------
+
+// The sidebar
+.map-sidebar {
+	position: fixed;
+	right: 0;
+	top: 0;
+	height: 100%;
+	width: 400px;
+	max-width: 1200px; // When .wide-open
+	padding-top: 129px;
+	overflow-y: scroll;
+	background-color: #f6f6f6;
+	opacity: 1;
+	z-index: $z-map-sidebar;
+	@include transition(width 1s ease, transform .6s ease, opacity .6s ease);
+	&.off-canvas {
+		@include translateX(100%);
+		opacity: .4;
+	}
+	-webkit-box-shadow: 0 0 30px 0 rgba(0, 0, 0, .2);
+	box-shadow: 0 0 30px 0 rgba(0, 0, 0, .2);
+	@include respond-to(x-small-screens) {
+		width: 100%;
+	}
+}
+
+.map-sidebar__main-content {
+	background-color: white;
+	width: 400px;
+	position: relative;
+	z-index: $z-sidebar-main;
+	float: left;
+}
+
+// Dismiss button
+.map-sidebar__dismiss {
+	position: absolute;
+	z-index: $z-sidebar-dismiss;
+	width: em-font(70px);
+	height: em-font(70px);
+	background-color: $black;
+	top: 129px;
+	right: 0;
+	cursor: pointer;
+	font-family: 'SSGizmo';
+	color: white;
+	.ss-icon {
+		position: absolute;
+		top: 60%;
+		left: 50%;
+		@include translate(-50%, -50%);
+		@include fontsize(2.6, 2.6);
+		@include transition(all .2s ease);
+	}
+}
+.map-sidebar__dismiss:hover .ss-icon {
+	opacity: .7;
+}
+
+// Main picture
+.map-sidebar__picture {
+	width: 100%;
+}
+
+// All images
+.map-sidebar img {
+	max-width: 100%;
+	height: auto;
+	display: block;
+}
+
+// The wrapper for content below the main picture
+.map-sidebar__wrapper {
+	padding: 0 em-font(40px, 10px) em-font(40px, 10px);
+	margin: em-font(25px, 10px) 0 0;
+	.tickets__container{
+		padding: 0;
+	}
+	@include respond-to(x-small-screens) {
+		padding: 0 em-font(20px, 10px) em-font(20px, 10px);
+	}
+}
+
+.map-sidebar__info-list li {
+	@extend %fs-medium;
+	color: $grey;
+	strong {
+		color: $text_color;
+	}
+}
+
+// Typography
+.map-sidebar__description {
+	@extend %fs-extra-medium;
+}
+.map-sidebar__links-list a {
+	@extend %fs-medium;
+}
+
+.map-sidebar__additional-content {
+	@include transform(translate(0, 0) scale(0,1));
+	position: fixed;
+	@include transition-delay(1s);
+	padding: 0 0 0 em-font(400px, 10px);
+}
+
+
+// ------------------------------------------------------------
+// Map sidebar: when wide open
+// ------------------------------------------------------------
+
+.map-sidebar.wide-open {
+	width: 80%;
+	@include respond-to(large-screens) {
+		width: 100%;
+	}
+}
+
+.map-sidebar.wide-open .map-sidebar__dismiss {
+	position: fixed;
+}
+
+.map-sidebar.wide-open .map-sidebar__main-content {
+	@include respond-to(large-screens) {
+		display: none;
+	}
+}
+
+.map-sidebar.wide-open .map-sidebar__additional-content {
+	@include transform(translate(0, 0) scale(1,1));
+	opacity: 1;
+	a {
+		@extend .underlined-link;
+	}
+	@include respond-to(large-screens) {
+		padding-left: 0;
+	}
+}
+
+.map-sidebar__additional-content figure {
+	margin: em-font(100px, 10px) auto 0;
+	max-width: em-font(1200px, 10px);
+}
+
+.map-sidebar__additional-content figcaption {
+	margin: em-font(15px, 10px) auto em-font(30px, 10px);
+	max-width: em-font(500px, 10px);
+}
+
+.map-sidebar__additional-content p {
+	@extend %fs-medium;
+}
+
+.map-sidebar__additional-content img {
+	max-height: 40vh;
+	width: auto;
+	margin: 0 auto;
+}
+.map-sidebar__slider {
+	width: 100% !important;
+	position: relative;
+	margin: 0 auto;
+	overflow: auto;
+}
+.map-sidebar__slider > ul > li {
+	float: left;
+	list-style: none;
+	padding: 0 40px;
+}
+
+
+.dots {
+	position: absolute;
+	top: 60px;
+	left: 50%;
+	@include translateX(-50%);
+}
+
+.dots .dot {
+	text-indent: -300%;
+	overflow: hidden;
+	width: 8px;
+	height: 8px;
+	background-color: $info_grey;
+	border-radius: 11px;
+	display: inline-block;
+	&.active {
+		background-color: $light_grey;
+	}
+	&:not(.active) {
+		cursor: pointer;
+	}
+	&:not(:last-child) {
+		margin-right: 15px;
+	}
+}

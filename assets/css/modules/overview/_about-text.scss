@@ -1,0 +1,38 @@
+// ------------------------------------------------------------
+// Overview Article - Part 2
+// ------------------------------------------------------------
+// > Text-about 
+// ------------------------------------------------------------
+// Summary
+// ------------------------------------------------------------
+//
+// 1. Text About					.overview-article
+// ------------------------------------------------------------
+
+
+.overview-article__about{
+	// Canvas position (Desktop)
+	margin-top: $fs*9.4;
+	@include gs-span(d, 2,6);
+	// Canvas re-position (tablet)
+	@include respond-to(medium-screens){
+    	@include gs-span(t, 1,6);
+    	margin-top: $fs*7.5;
+	}
+	
+	// Canvas re-position (mobile)
+	@include respond-to(small-screens){
+		margin-top: $fs*6;
+		width: 100%;
+		margin: 0; 
+		float: none;
+		// padding: $fs*2;
+	}
+	// Text sizing 
+	p{
+	 	@include fontsize(2.1,3);
+	 	@include respond-to(medium-screens){
+    		@include fontsize(1.8,2.6);
+		}
+	}
+}

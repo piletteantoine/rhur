@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="de">
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+		<link rel="stylesheet" href="assets/css/screen.css">
+		<link href="https://get.gridsetapp.com/30892/" rel="stylesheet" />
+		<title>RUHRTRIENNALE</title>
+		<meta charset="utf-8">
+		<link rel="shortcut icon" type="image/ico" href="favicon.ico" />
+		<!-- TODO: Download a custom build of modernizer to suit the project -->
+		<!-- <script src="//cdnjs.cloudflare.com/ajax/libs/modernizr/2.7.1/modernizr.min.js"></script> -->
+		<script src="assets/js/vendor/modernizr.js"></script>
+	</head>
+<body>
+
+	<div class="search-bar" id="search-bar">
+		<div class="wrapper">
+			<input type="search" class="search-bar__field" placeholder="I'm looking for..." autofocus id="search-field">
+			<button type="submit" class="btn-info">Find it</button>
+		</div><!-- /.wrapper -->
+	</div><!-- /.search-bar -->
+
+	<!-- # Header Start # -->
+	<header class="navigation" id="navigation">
+		<nav class="navigation-menu">
+			<div class="wrapper nav">
+				<a href="index.html" class="navigation-menu__logo"><img src="assets/svg/logo.svg" alt="Ruhrtriennale 2015"></a><!-- /.logo-->
+				<a class="navigation-menu__show" href="#" id="nav-trigger"><span></span></a><!-- /.show-menu -->
+				<ul class="navigation-menu__list" id="primary-nav-list">
+					<li><a href="events.html">Programme</a></li>
+					<li><a href="map.html">Map</a></li>
+					<li><a class="active" href="venues.html">Venues</a></li>
+					<li><a href="/">News</a></li>
+					<li><a href="page.html">The Triennale</a></li>
+					<li><a href="events.html">My Ruhr</a></li>
+				</ul><!-- /.menu -->
+				<a href="" class="btn-action">Buy tickets</a>
+				<button class="search-trigger ss-icon" id="search-trigger">Search</button>
+			</div><!-- /.wrapper -->
+		</nav><!-- /.header__menu-->
+	</header>
+
+	<div class="additional-navigation">
+		<div class="wrapper">
+			<select class="custom-select">
+				<option value="">Filter A</option>
+				<option>Option 1</option>
+				<option>Option 2</option>
+				<option>Option 3</option>
+				<option>...</option>
+			</select>
+			<select class="custom-select">
+				<option value="">Filter B</option>
+				<option>Option 1</option>
+				<option>...</option>
+			</select>
+			<select class="custom-select">
+				<option value="">Filter C</option>
+				<option>Option 1</option>
+				<option>Option 2</option>
+				<option>...</option>
+			</select>
+		</div><!-- /.wrapper -->
+	</div><!-- /.additional-navigation -->
+
+<!-- # END HEADER # -->
+
+
+
+
+
+<!-- # START CONTENT # -->
+
+	<div class="map_canvas" id="map_canvas"></div>
+	<img id="canvas" />
+			<input type="range" value="50" min="0" max="100" step="10" />
+	<div id="demo-simple-slider" class="dragdealer">
+		<span class="slider-info">March 2015</span>
+		<input class="handle" type="range" min="0" max="100" step="1" value="0">
+	</div>
+
+	<aside class="map-sidebar" id="map-sidebar">
+		<div class="map-sidebar__dismiss dismiss" data-action-class="off-canvas" data-target="map-sidebar"><i class="ss-icon ss-close">Close</i></div>
+		<div class="map-sidebar__main-content">
+			<a href="#" class="view-more-overlay" id="view-event-pictures">
+				<img class="map-sidebar__picture" src="assets/img/overview_news1.jpg">
+			</a>
+			<div class="target__block">
+				<div class="target__address">
+					<address>
+						Simon-Meister-Straße 24<br>
+						50733 Köln, Germany
+					</address>
+				</div><!-- /.target__address -->
+				<button class="target-button"><span class="button__contents"><span class="button__insight">Get directions</span><i class="ss-icon ss-signpost"></i></span></button>
+			</div><!-- /.target__block -->
+
+			<div class="map-sidebar__wrapper">
+				<h2 class="heading-large">Castellucci - Bochum</h2>
+				<div class="tickets__container">
+				<h4 class="heading-tiny">Premiere</h4>
+				<p>16. August 2014</p>
+
+				<h4 class="heading-tiny">Weitere Termine</h4>
+				<p>15. 16. 17. 17. 19. 20. 21. 22. 22. 23. 23. 24. 24. 25. August</p>
+				
+				<h4 class="heading-tiny">Dauer</h4>
+				<p>ca. 1 h</p>
+
+				<h4 class="heading-tiny">Tickets</h4>
+				<p>20 / 30 €</p>
+				<p>Ermäßigungen ab 10,00 €</p>
+
+				<button class="btn-action-black">Buy Tickets</button>
+
+				<h4 class="heading-tiny">Infos</h4>
+				<p>For booking by phone,<br>
+				feel free to call us :</p>
+
+
+				<a class="overview__link_underline" href="tel:+49 (0)34 456 674 44">+49 (0)34 456 674 44</a>
+			</div><!-- /.tickets__container -->
+				<h4 class="heading-tiny">Related events</h4>
+				<ul class="floating-list by-2">
+					<li class="event-small-card">
+						<a class="unstyled-link" href="#">
+							<img src="assets/img/events-4.jpg">
+							<p>Boris Charmatz Flipbook</p>
+						</a>
+					</li>
+					<li class="event-small-card">
+						<a class="unstyled-link" href="#">
+							<img src="assets/img/events-3.jpg">
+							<p>Pina Bausch</p>
+						</a>
+					</li>
+					<li class="event-small-card">
+						<a class="unstyled-link" href="#">
+							<img src="assets/img/events-1.jpg">
+							<p>Romeo Castellucci</p>
+						</a>
+					</li>
+					<li class="event-small-card">
+						<a class="unstyled-link" href="#">
+							<img src="assets/img/events-2.jpg">
+							<p>Seid umschlungen</p>
+						</a>
+					</li>
+				</ul>
+			</div><!-- /.map-sidebar__wrapper -->
+		</div><!-- /.map-sidebar__main-content -->
+		<div class="map-sidebar__additional-content">
+			<div class="map-sidebar__slider" id="map-sidebar-slider">
+				<ul>
+					<li>
+						<figure>
+							<img class="map-sidebar__picture" src="https://unsplash.imgix.net/reserve/9Fx2auQ4yoHM8OpWA8qw__MG_5265.jpg">
+							<figcaption>
+								<p>Across the sea of space, the stars are other suns.</p>
+							</figcaption>
+						</figure>
+					</li>
+					<li>
+						<figure>
+							<img class="map-sidebar__picture" src="https://unsplash.imgix.net/reserve/EnF7DhHROS8OMEp2pCkx_Dufer%20food%20overhead%20hig%20res.jpg">
+						</figure>
+					</li>
+					<li>
+						<figure>
+							<img class="map-sidebar__picture" src="https://unsplash.imgix.net/reserve/LJIZlzHgQ7WPSh5KVTCB_Typewriter.jpg">
+							<figcaption>
+								<p>If you could see the earth illuminated when you were in a place as dark as night, it would <a href="#">look to you</a> more splendid than the moon.</p>
+							</figcaption>
+						</figure>
+					</li>
+					<li>
+						<figure>
+							<img class="map-sidebar__picture" src="https://unsplash.imgix.net/46/Ov6ZY1zLTWmhPC0wFysP_IMG_2896_edt.jpg">
+							<figcaption>
+								<p>If you could see the earth illuminated when you were in a place as dark as night, it would <a href="#">look to you</a> more splendid than the moon.</p>
+							</figcaption>
+						</figure>
+					</li>
+				</ul>
+			</div><!-- /.map-sidebar__slider -->
+		</div><!-- /.map-sidebar__additional-content -->
+	</aside>
+<!-- # END CONTENT # -->
+
+
+
+
+
+
+<!-- # FOOTER START # -->
+
+	<!-- TODO: Select version of jquery and link to CDN -->
+
+	<!-- "Main Vendor Import" with fallback (local file) -->
+	<script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+	<script> window.jquery || document.write('<script src="assets/js/vendor/jquery-2.1.1.min.js"><\/script>')</script>
+	
+	<!-- Map SVG Overlay -->
+ 	<script src="http://maps.googleapis.com/maps/api/js?v=3.exp&amp;libraries=places&amp;sensor=false"></script>
+ 	<script src="assets/js/vendor/svgoverlay.min.js"></script>
+
+	<!-- Vendor -->
+	<script src="assets/js/vendor/gridset-overlay.js"></script>
+
+	<script src="assets/js/vendor/ss-gizmo.js"></script>
+
+	<!-- Custom File -->
+	<script src="assets/js/script.js"></script>
+</body>
+</html>
+
+<!-- # FOOTER END # -->

@@ -1,0 +1,53 @@
+// ------------------------------------------------------------
+// Pagination
+// ------------------------------------------------------------
+
+.pagination {
+	text-align: center;
+	margin: 30px 0 70px;
+	margin: $fs*2 0 $fs*7;
+}
+
+.pagination__item-page-number {
+	display: inline-block;
+	margin-bottom: 20px;
+	margin-bottom: $fs*2;
+	&:not(:last-child) {
+		margin-right: 10px;
+		margin-right: $fs;
+	}
+}
+
+.pagination__link-page-number {
+	@extend %fs-extra-medium;
+	line-height: 1;
+	display: inline-block;
+	color: $text_color;
+	text-decoration: none;
+	padding: 8px;
+	padding: $fs*.8;
+	width: 36px;
+	width: $fs*3.6;
+	border: 1px solid $info_grey;
+	@include transition(color .2s ease);
+	&:hover {
+		color: $brand_color_primary;
+	}
+}
+
+.pagination__link-page-number.current {
+	color: $brand_color_tertiary;
+}
+
+.pagination__link-page-number.dots {
+	position: static;
+	top: auto;
+	left: auto;
+	@include transform(none);
+	border: none;
+	color: $brand_color_tertiary;
+}
+
+.pagination__link-page-number.next {
+	border: none;
+}

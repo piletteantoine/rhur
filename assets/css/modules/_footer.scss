@@ -1,0 +1,95 @@
+// ------------------------------------------------------------
+// Generic Footer
+// ------------------------------------------------------------
+
+
+// Just REMOVE IT and insert true content
+
+// .generic_footer p,
+.generic_navigation p{
+	@include fontsize(2);
+	position: absolute;
+	text-transform: uppercase;
+	letter-spacing: 1px;
+	@include translate(-50%, -50%);
+	left: 50%;
+	top: 50%;
+	color: $brand_color_tertiary;
+}
+
+%generic{
+	display: block;
+	text-align: center;
+	position: relative;
+	clear: left;
+}
+
+.generic_navigation{
+	@extend %generic;
+	height: 5vw;
+	background-color: lighten($hot_grey, 20%);
+}
+
+.secondary-navigation{
+	@include fontsize(1.4,2.4);
+	.footer-column{
+		width: #{gs-width(m, 1, 1) + '%'};
+		background-color: white;
+		margin-right: #{gs-gutter(m, false, false) + '%'};
+		margin-left: #{gs-gutter(m, false, false) + '%'};
+		margin-bottom: #{gs-gutter(m, false, false) + '%'};
+		float: left;
+		&:nth-of-type(4n + 0) {
+			margin-right: 0;
+		}
+		&:nth-of-type(1n + 0) {
+			margin-left: 0;
+		}
+		ul li a{
+			color: $text_color;
+			text-decoration: none;
+			&:hover{
+				color: $light_text;
+			}
+		}
+
+		.social-networks{
+			margin-top: $fs*8;
+			@include fontsize(2.3, 4.5); 
+			@extend %socialico;
+			li a{
+				font: 0/0 a;
+			}
+			li:before{
+				color: $brand_color_secondary;
+				cursor: pointer;
+				&:hover{
+					color: $light_text;
+				}
+			}
+			li:nth-of-type(1):before{
+				content: 'a';
+			}
+			li:nth-of-type(2):before{
+				content: 'b';
+			}
+			li:nth-of-type(3):before{
+				content: 'c';
+			}
+		}
+		@include respond-to(small-screens){
+			width: 100%;
+			.heading-medium{
+				width: 50%;
+				border-bottom: 2px solid $light_text;
+			}
+		}
+	}
+}
+// .generic_footer{
+// 	display: block;
+// 	background-color: lighten($brand_color_tertiary, 20%);
+// 	text-align: center;
+// 	height: 20vw;
+// 	position: relative;
+// }

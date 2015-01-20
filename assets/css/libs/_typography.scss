@@ -1,0 +1,181 @@
+// ------------------------------------------------------------
+// Global typography
+// ------------------------------------------------------------
+
+
+// ------------------------------------------------------------
+// Fonts
+// ------------------------------------------------------------
+
+// Filenames
+$circular-book: 'CircularPro-Book';
+$circular-bold: 'CircularPro-Bold';
+$newParis: 'NewParisSkyline';
+$socialico: 'socialico';
+
+// Font stacks
+%circular-book {
+  font-family: $circular-book, helvetica, arial, sans-serif;
+}
+%circular-bold {
+  font-family: $circular-bold, helvetica, arial, sans-serif;
+}
+%newParis {
+	font-family: $newParis, helvetica, arial, sans-serif;
+}
+%socialico {
+	font-family: $socialico, helvetica, arial, sans-serif;
+}
+
+@mixin fontFaceGenerator ($name,$filename,$weight:normal,$style:normal) {
+
+	@font-face {
+		font-family: $name;
+	    src: url('../fonts/#{$filename}.eot?#iefix') format('embedded-opentype'),
+			 url('../fonts/#{$filename}.ttf') format('truetype'),
+	         url('../fonts/#{$filename}.woff') format('woff'),
+	         url('../fonts/#{$filename}.svg##{$filename}') format('svg');
+		font-weight: $weight;
+	    font-style: $style;
+	}
+
+	%#{$name}-#{$weight}-#{$style} {
+	    font-family: $name;
+	    font-weight: $weight;
+	    font-style: $style;
+	}
+}
+
+// Generate the font stacks
+@include fontFaceGenerator($circular-book, $circular-book, $weight: normal, $style: normal);
+@include fontFaceGenerator($circular-bold, $circular-bold, $weight: normal, $style: normal);
+@include fontFaceGenerator($newParis, $newParis, $weight: normal, $style: normal);
+@include fontFaceGenerator($socialico, $socialico, $weight: normal, $style: normal);
+
+
+// ------------------------------------------------------------
+// Font sizes
+// ------------------------------------------------------------
+
+%fs-tiny			{ @include fontsize(1.1, 2.5); }
+%fs-small			{ @include fontsize(1.4, 2.1); }
+%fs-medium 			{ @include fontsize(1.5, 2.3); }
+%fs-extra-medium	{ @include fontsize(1.8, 2.8); }
+%fs-large			{ @include fontsize(2.1, 3.0); }
+%fs-extra-large		{ @include fontsize(2.4, 2.9); }
+%fs-huge			{ @include fontsize(3.0, 3.6); }
+%fs-extra-huge		{ @include fontsize(3.4, 4.1); }
+%fs-sum-poster		{ @include fontsize(5.0, 6.0); }
+
+
+// ------------------------------------------------------------
+// Headings
+// ------------------------------------------------------------
+
+.heading-tiny {
+	@extend %fs-tiny;
+	color: $light_text;
+	text-transform: uppercase;
+	@extend %circular-bold;
+	margin: em-font(36px, 10px) 0 0;
+	@include kerning(100);
+}
+
+.heading-small {
+	@extend %fs-small;
+	color: $text_color;
+	@extend %circular-bold;
+	margin: em-font(16px, 16px) 0;
+}
+
+.heading-x-small {
+	@extend %fs-small;
+	color: $text_color;
+	@extend %circular-bold;
+	margin: em-font(16px, 16px) 0;
+	letter-spacing: 1px;
+	text-transform: uppercase;
+	margin-left: 40px;
+}
+
+
+.heading-medium {
+	@extend %fs-medium;
+	margin: em-font(30px, 24px) 0;
+	color: $light_text;
+	letter-spacing: 1px;
+	margin: $fs*4 0 $fs*2 0;
+}
+
+.heading-medium {
+	@extend %fs-medium;
+	margin: em-font(30px, 24px) 0;
+	color: $light_text;
+	letter-spacing: 1px;
+	margin: $fs*4 0 $fs*2 0;
+}
+
+.heading-large {
+	@extend %fs-large;
+	margin: em-font(40px, 40px) 0;
+	color: $text_color;
+}
+
+.heading-x-large {
+	@extend %fs-extra-huge;
+	margin: em-font(40px, 40px) 0;
+	color: $brand_color_primary;
+}
+
+.heading-huge {
+	@extend %fs-huge;
+	margin: em-font(40px, 40px) 0;
+}
+
+.heading-umschlungen{
+	@extend %fs-extra-large;
+	margin-bottom: $fs*5.5;
+	text-align: center;
+	clear: both;
+	@include respond-to(small-screens){
+		margin-top: $fs*4.5;
+	}
+}
+
+
+// ------------------------------------------------------------
+// Simple Style
+// ------------------------------------------------------------
+.uppercase{
+	text-transform: uppercase;
+}
+
+// ------------------------------------------------------------
+// Legends
+// ------------------------------------------------------------
+
+%legend{
+  @extend %circular-book;
+  font-size: 12px!important; // A supprimer 
+  text-align: center;
+  color: $hot_grey;
+  margin-top: $fs*.5;
+}
+.page-simple__legend{
+	@extend %legend;
+}
+
+.overview__legend{
+	@extend %legend;
+}
+// ------------------------------------------------------------
+// Paragraphs
+// ------------------------------------------------------------
+
+p {
+	@extend %fs-medium;
+}
+
+.overview-article p{
+	@extend %fs-extra-medium;
+}

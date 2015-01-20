@@ -1,0 +1,89 @@
+// ------------------------------------------------------------
+// Target block (used for the tickets block or map sidebar)
+// ------------------------------------------------------------
+
+.target__block{
+	position: relative;
+	@extend .clearfix;
+	h5{
+		@extend %fs-medium;
+	}
+}
+
+.target-button {
+	width: $fs*7;
+	height: $fs*7;
+	position: absolute;
+	top: 0;
+	right: 0;
+	border: none;
+	outline: 0;
+	@include transition(all .2s ease);
+}
+
+.target-button:hover {
+	width: 100%;
+	position: absolute;
+	background-color: #3b78e7;
+	background-color: $black;
+	.button__insight {
+		opacity: 1;
+		position: static;
+		@include translateY(-6px);
+		@include transition(opacity .3s ease);
+		@include transition-delay(.2s);
+	}
+	.ss-icon {
+		position: static;
+		@include translateX($fs*1.2);
+	}
+}
+
+.button__insight {
+	display: inline-block;
+	color: white;
+	opacity: 0;
+	top: em-font(8px, 16px);
+	@extend %fs-medium;
+	margin-right: em-font(15px, 16px);
+	@include transition(none);
+	@include transition-delay(.2s);
+	position: absolute;
+}
+
+.button__contents {
+	position: relative;
+	width: 100%;
+	text-align: center;
+}
+
+
+.target-button .ss-icon {
+	color: white;	
+	@include fontsize(2.5);
+	position: absolute;
+	top: -15px;
+	left: -12px;
+}
+
+.target__address {
+	float: left;
+	padding: 12px 0 0px 20px;
+	@extend %fs-small;
+	color: $hot_grey;
+}
+
+// Clear margin-top defined in _typography.scss
+.target__address .heading-tiny {
+	margin-top: 0;
+}
+
+// If the component is used in the map sidebar
+.map-sidebar .target__address {
+	padding-top: $fs*1.5;
+	padding-left: $fs*4;
+}
+
+.target__block .target__title{
+	padding: $fs $fs $fs $fs*2.4;
+}

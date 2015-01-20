@@ -1,0 +1,65 @@
+// ------------------------------------------------------------
+// Overview Article - Part 8
+// ------------------------------------------------------------
+// > End of article content
+// ------------------------------------------------------------
+// Summary
+// ------------------------------------------------------------
+//
+// 1.footer			overview-article__footer
+// ------------------------------------------------------------
+
+// The Footer 
+.overview-article__footer {
+	margin-top: $fs*8.7;
+	@include gs-span(d, 2,6);
+	clear: both;
+	ul{
+		clear: both;
+		li{
+			list-style:  none;
+			@include fontsize(2, 3.2);
+			@include respond-to(medium-screens){
+		    	@include fontsize(1.7, 2.8);
+			}
+		}	
+	}
+
+	@include respond-to(medium-screens){
+    	@include gs-span(t, 1,6);
+	}
+	@include respond-to(small-screens){
+		width: 100%;
+		margin: 0; 
+		float: none;
+		// padding: $fs*2;
+	}
+}
+
+// Footer header information
+.overview-article__footer-information .left,
+.overview-article__footer-information .right{
+	margin-bottom: $fs*4.5;
+	float: left;
+	display: inline-block;
+	@include respond-to(small-screens){
+		margin-bottom: $fs*2.5;
+	}
+}
+.overview-article__footer-information p{
+	@include fontsize(1.6, 2.5);
+}
+
+
+.overview-article__footer-information h4{
+	@extend %circular-bold;
+	letter-spacing: 1px;
+	@include fontsize(1, 2.4);
+	text-transform: uppercase;
+	color: $info_grey;
+}
+
+
+.overview-article__footer-information .left{
+	margin-right: $fs*14;
+} 

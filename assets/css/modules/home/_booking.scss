@@ -1,0 +1,50 @@
+.home-booking{
+	@include gs-span(d, 3,7);
+	position: relative;
+	clear: left;
+}
+
+.home-booking__wrapper{
+	position: absolute;
+	top: 0;
+	z-index: 1;
+	text-align: center;
+	width: 100%;
+}
+
+
+.home-booking__avatar{
+   width: 100px;
+   height: 100px;
+   -webkit-border-radius: 50%;
+   -moz-border-radius: 50%;
+   -ms-border-radius: 50%;
+   border-radius:50%;
+}
+
+
+.home-booking__wrapper figcaption{
+	@include fontsize(2,2.8);
+}
+
+.home-booking__legend{
+	@include fontsize(1.6,2.4);
+	color: $grey;
+}
+
+.airbnb{
+	padding: $fs*2 $fs*3.3 $fs*2 $fs*3.3;
+	margin: 15% 0 10% 0;
+}
+
+// Media Queries 
+
+.airbnb{
+	@include respond-to(medium-screens){
+		margin: 23% 0 17% 0;
+	}
+	@include respond-to(small-screens){
+		margin: 50% 0 30% 0;
+		@include gs-span(m, all);
+	}
+}

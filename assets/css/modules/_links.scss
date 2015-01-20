@@ -1,0 +1,44 @@
+// ------------------------------------------------------------
+// Links 
+// ------------------------------------------------------------
+
+// Base style for links
+a {
+	@include transition(all .2s ease);
+}
+
+// Base style for unstyled links
+.unstyled-link {
+	@include link-colors($text_color, lighten($text_color, 20%));
+	text-decoration: none;
+}
+
+// Base style for underlined links
+.underlined-link {
+	text-decoration: underline;
+	@include link-colors($grey, lighten($grey, 20%));
+}
+
+// Base style for external links
+.external-link:after {
+	content: '⬈';
+	display: inline-block;
+	font-family: 'SSGizmo';
+	@include fontsize(1);
+	color: $light_grey;
+	margin-left: em-font(10px);
+}
+
+.overview__link_underline {
+	@extend .underlined-link;
+	@include fontsize(1.6, 2.4);
+}
+
+// .underlined-link-animation:before {
+// 	content: '➡';
+// 	display: inline-block;
+// 	font-family: 'SSGizmo';
+// 	@include fontsize(1.5);
+// 	color: $text_color;
+// 	margin-right: em-font(10px);
+// }

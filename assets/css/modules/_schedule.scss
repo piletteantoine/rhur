@@ -1,0 +1,21 @@
+// ------------------------------------------------------------
+// Schedule
+// ------------------------------------------------------------
+
+.schedule-list {
+	margin-bottom: em-font(40px, 10px);
+}
+
+.schedule-list__date {
+	@include fontsize(1.6);
+	display: inline-block;
+	width: 100%;
+	padding: 14px 0 16px 0;
+	border-bottom: 1px solid $info_grey;
+	@include respond-to(medium-screens){
+		padding: 10px 0 10px 0;
+	}
+	span{
+		float: right;
+	}
+}

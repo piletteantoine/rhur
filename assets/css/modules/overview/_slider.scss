@@ -1,0 +1,69 @@
+// ------------------------------------------------------------
+// Overview > Slider (End of page)
+// ------------------------------------------------------------
+
+
+
+.overview__slider {
+	.overview__legend{
+		margin-top: 20px;
+	}
+	width: 100%;
+	overflow: hidden;
+	position: relative;
+	padding-bottom: $fs*15;
+	.overview__slide-container {
+		height: auto;
+		position: relative;
+		overflow: hidden;
+		transition: 0.4s;
+		img{
+			width: 100%;
+		}
+	}
+	.overview__slide {
+		position: relative;
+		float: left;
+		text-align: center;
+		line-height: 200px;
+		.overview__legend{
+			// @include fontsize(1.6, 2.5);
+			position: absolute;
+			bottom: 0;
+			width: 100%;
+			margin-bottom: $fs*5;
+			color: $hot_grey;
+			// font-size: 12px;
+		}
+	}
+	.overview__controls {
+		.prev,
+		.next {
+			position: absolute;
+			top: 30%;
+			@include translate3d(0, -30%, 0);
+			width: $fs*6;
+			height: $fs*6;
+			background-color: $brand_color_tertiary;
+			@extend %fs-medium;
+			color: $white;
+			text-decoration: none;
+			&:hover {
+				background-color: $text_color;
+			}
+		}
+		.prev .ss-icon,
+		.next .ss-icon {
+			position: absolute;
+			left: 50%;
+			top: 50%;
+			@include translate3d(-50%, -50%, 0);
+		}
+		.prev {
+			left: 0;
+		}
+		.next {
+			right: 0;
+		}
+	}
+}
